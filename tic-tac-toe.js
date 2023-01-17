@@ -6,6 +6,7 @@ const winConditions = [
 ];
 
 let options = ["","","","","","","","",""];
+
 let currentPlayer = "X";
 let playing = false;
 
