@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Tic-tac.css">
-    <title>Game</title>
+    <title>grid css</title>
 </head>
 <body>
     <div class="container">
         <h1>Tic-Tac-Toe</h1>
-        <button id="restartBtn">Restart</button>
+        <div class="resultContainer">
+            <div id="gameover"></div>
+            <button class="buttonbtn" id="restartbtn">New Game</button>
+        </div>
         <div class="dashboard">
  
             <div class="box" cellIndex="0"></div>
@@ -24,7 +27,9 @@
             <div class="box" cellIndex="8"></div>
 
         </div>
+        <button class="button" id="restartBtn">Restart</button>
         <h2 id ="gamestatus"></h2>
+        
     </div>
     <script src="tic-tac-toe.js"></script>
 </body>
