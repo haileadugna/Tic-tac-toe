@@ -71,7 +71,7 @@ function checkWinner(){
         playing = false;
 
     } else if (!options.includes("")){
-        statusText2.textContent = `draw new game!`;
+        statusText2.textContent = `Both loss Draw new game!`;
         resultbox.style.display = "block";
         statusText.textContent ="";
         restartBtn.textContent = "";
