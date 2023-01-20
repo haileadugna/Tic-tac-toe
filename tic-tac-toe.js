@@ -1,6 +1,9 @@
 const cells = document.querySelectorAll(".box");
 const statusText = document.querySelector("#gamestatus");
+const statusText2 = document.querySelector("#gameover");
 const restartBtn = document.querySelector("#restartBtn");
+const newGameBtn = document.querySelector("#restartbtn");
+const resultbox =  document.querySelector(".resultContainer");
 const winConditions = [
     [0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]
 ];
@@ -8,11 +11,12 @@ const winConditions = [
 let options = ["","","","","","","","",""];
 let currentPlayer = "X";
 let playing = false;
-
+resultbox.style.display = "none";
 initializeGame();
 function initializeGame(){
     cells.forEach(box => box.addEventListener("click", cellClicked));
     restartBtn.addEventListener("click", restartGame);
+    newGameBtn.addEventListener("click", restartGame);
     playing = true;
     statusText.textContent = `Player ${currentPlayer}'s turn `;
 }
@@ -60,11 +64,17 @@ function checkWinner(){
     }
 
     if (roundWon){
-        statusText.textContent = `Player ${currentPlayer}'s Win `;
+        statusText2.textContent = `Player ${currentPlayer}'s Win `;
+        resultbox.style.display = "block";
+        statusText.textContent = "";
+        restartBtn.textContent = "";
         playing = false;
 
     } else if (!options.includes("")){
-        statusText.textContent = `draw new game!`;
+        statusText2.textContent = `draw new game!`;
+        resultbox.style.display = "block";
+        statusText.textContent ="";
+        restartBtn.textContent = "";
         playing = false;
 
     }
@@ -79,4 +89,6 @@ function restartGame(){
     currentPlayer = "X";
     playing = true;
     statusText.textContent = `Player ${currentPlayer}'s turn `;
+    restartBtn.textContent = "Restart";
+    resultbox.style.display = "none";
 }
