@@ -69,7 +69,7 @@ function checkWinner(){
     }
 
     if (roundWon){
-        statusText2.textContent = `Player ${currentPlayer}'s Win `;
+        statusText2.textContent = `Congrats Player ${currentPlayer} Win `;
         resultbox.style.display = "block";
         statusText.textContent = "";
         restartBtn.textContent = "";
