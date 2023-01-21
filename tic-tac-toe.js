@@ -38,7 +38,12 @@ function updateCell(box, index){
 }
 
 function changePlayer(){
-    currentPlayer = (currentPlayer == "X")? "O" : "X";
+    if (currentPlayer == "X"){
+        currentPlayer = "O";
+    }
+    else{
+        currentPlayer = "X";
+    }
     statusText.textContent = `Player ${currentPlayer}'s turn `;
 }
 
